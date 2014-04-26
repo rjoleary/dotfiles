@@ -63,11 +63,12 @@ setopt rc_expand_param   # 'foo${xx}bar', where xx is 'a b c', expands to 'fooab
 # Correction
 setopt correctall
 
+# Grep color
+#  This turns on color output for grep, better than an alias.
+export GREP_OPTIONS="--color=auto"
+
 # Aliases
-alias ls="ls --color"
-alias ll="ls -l"
-alias la="ls -a"
-alias grep="grep --color"
+alias ls='ls --color=auto --classify' # Color is disabled when piping
+alias clang++='clang++ -std=c++11 -Wall -pedantic'
 alias zshrc="$EDITOR $ZSHRC && source $ZSHRC" # reloads .zshrc after editing
 alias vimrc="$EDITOR $VIMRC"
-

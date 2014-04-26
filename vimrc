@@ -1,7 +1,9 @@
 " BASIC VIM SETTINGS
 set nocompatible          " used for VIM
-set shiftwidth=4          " number of spaces for an indentation
-set tabstop=4             " number of spaces that a tab replaces
+set expandtab             " convert tabs to spaces
+set shiftwidth=4          " tabs are 4 spaces
+set tabstop=4             " tabs are 4 spaces
+set softtabstop=4         " tabs are 4 spaces
 set autoindent            " newlines keep the indentation level
 set number                " line numbering
 set ignorecase            " use case insensitive search, but...
@@ -16,6 +18,7 @@ set foldmethod=marker     " folding
 set backspace=2           " backspaces can delete line breaks
 set clipboard=unnamedplus " use clipboard for yank
 set hidden                " instead of closing, buffers become hidden
+set scrolloff=3           " keep 3 lines below and above the cursor
 
 
 " MAPPINGS
@@ -46,14 +49,27 @@ filetype plugin indent on
 
 
 " CLANG COMPLETE PLUGIN
-let g:clang_user_options = '|| exit 0'
-let g:clang_complete_copen = 1
-"let g:clang_library_path='/usr/lib'
-" complete function parameters using snipmate
-let g:clang_snippets = 1
-let g:clang_snippets_engine = 'snipmate'
-" automatically insert completion
-set completeopt=menu,longest
+
+" Use `libclang.so`; it is faster than the running clang, but requires Python.
+let g:clang_library_path      = '/usr/lib/llvm-3.4/lib/'
+" Compile with C++11.
+let g:clang_user_options      = '-std=c++11'
+
+" Use a popup completion menu.
+set completeopt=menu
+" Select the first entry in the popup menu.
+let g:clang_auto_select       = 1
+" Automatically complete after `->`, `.` and `::`.
+let g:clang_complete_auto     = 1
+" Show error window when compilation fails.
+let g:clang_complete_copen    = 1
+" Periodically update the error window.
+let g:clang_periodic_quickfix = 1
+" Highlight errors in the code as well.
+let g:clang_hl_errors         = 1
+" Add code placeholders for arguments, parameters, etc.
+let g:clang_snippets          = 1
+let g:clang_snippets_engine   = 'clang_complete'
 
 " WOMBAT PLUGIN
 syntax on
