@@ -1,29 +1,27 @@
 # inclusion guards
 snippet #guards
-	#ifndef ${1:`substitute(toupper(expand("%:t")),"\\.","_","g")`}__INCLUDED
-	#define $1__INCLUDED
+	#ifndef ${1:`substitute(toupper(expand("%:t")),"\\.","_","g")`}
+	#define $1
 
-		${2}
+	${2}
 
-	#endif // $1__INCLUDED
-
+	#endif // $1
 # classes
 snippet class
-	class ${1:ClassName}
-	{
+	class ${1:ClassName} {
 		// Construction
 		public:
 			$1(${2});
 			~$1(${3});
-		
+
 		// Methods
 		public:
 			${4}
-		
+
 		// Accessors
 		public:
 			${5}
-		
+
 		// Members
 		private:
 			${6}

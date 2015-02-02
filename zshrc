@@ -1,7 +1,7 @@
 # Variables
-ZSHRC="~/.zshrc"
-VIMRC="~/.vimrc"
-EDITOR="vim"
+export ZSHRC="~/.zshrc"
+export VIMRC="~/.vimrc"
+export EDITOR="vim"
 
 # General Options
 setopt auto_cd          # if a command cannot be executed, perform cd command
@@ -75,5 +75,5 @@ alias vimrc="$EDITOR $VIMRC"
 csserver () {
     USER="$1"
     HOST="linux.student.cs.uwaterloo.ca"
-    ssh -Y -o ServerAliveInterval=30 "$USER@$HOST";
+    ssh -Y -o ServerAliveInterval=10 "$USER@$HOST";
 }
