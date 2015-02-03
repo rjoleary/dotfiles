@@ -64,7 +64,7 @@ setopt rc_expand_param   # 'foo${xx}bar', where xx is 'a b c', expands to 'fooab
 setopt correctall
 
 # Grep color
-#  This turns on color output for grep, better than an alias.
+#  This turns on color output for grep.
 export GREP_OPTIONS="--color=auto"
 
 # Aliases
@@ -72,8 +72,12 @@ alias ls='ls --color=auto --classify' # Color is disabled when piping
 alias clang++='clang++ -std=c++11 -Wall -pedantic'
 alias zshrc="$EDITOR $ZSHRC && source $ZSHRC" # reloads .zshrc after editing
 alias vimrc="$EDITOR $VIMRC"
-csserver () {
-    USER="$1"
-    HOST="linux.student.cs.uwaterloo.ca"
-    ssh -Y -o ServerAliveInterval=10 "$USER@$HOST";
-}
+
+# I have some private configurations I like to keep secret. ;)
+if [ -n "$PRIVATE" ]; then
+    if [ -e "$PRIVATE" ]; then
+        source "$PRIVATE"
+    else
+        echo 'Error: could not source private configurations'
+    fi
+fi
