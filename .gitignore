@@ -1,0 +1,10 @@
+# Whitelist files for inclusion.
+/*
+!/install.sh
+!/LICENSE.txt
+!/README.md
+!/.gitignore
+!/.vim/
+!/.zsh/
+!/.vimrc
+!/.zshrc
