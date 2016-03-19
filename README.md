@@ -2,7 +2,11 @@ Dot Files
 =========
 
 This repository contains settings I commonly use for various programs.
-Right now, these "various programs" includes zsh and vim.
+Right now, these "various programs" includes:
+
+- git
+- vim
+- zsh
 
 
 Installation

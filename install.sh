@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Install git and zsh if they are not yet installed.
-sudo apt-get install git zsh
+# Install packages if they are not already.
+sudo apt-get install git vim zsh
 
 # Install git prompt for zsh.
 git clone https://github.com/olivierverdier/zsh-git-prompt.git .zsh/git-prompt
