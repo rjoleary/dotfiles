@@ -1,10 +1,16 @@
 # Whitelist files for inclusion.
 /*
+
+# Administrative files for the repo.
 !/install.sh
 !/LICENSE.txt
 !/README.md
 !/.gitignore
+!/.gitattributes
+
+# Files which are synced.
 !/.vim/
-!/.zsh/
 !/.vimrc
+!/.zsh/
 !/.zshrc
+!/.gitconfig
