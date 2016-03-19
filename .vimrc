@@ -28,6 +28,11 @@ set scrolloff=3           " keep 3 lines below and above the cursor
 "nnoremap : ;
 
 
+" SWAP AND BACKUP DIRECTORY
+set backupdir=~/.vimtemp,.
+set dir=~/.vimtemp//,.
+
+
 " SCRIPTS
 " remove trailing whitespace on save
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
