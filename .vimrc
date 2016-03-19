@@ -12,7 +12,7 @@ set hlsearch              " highlight search results
 set cmdheight=2           " change the height of the command window
 set confirm               " ask if you wish to save changes
 set showcmd               " show the command being typed
-set visualbell            " remove bell
+set visualbell            " remove bell and flash instead
 set mouse=a               " enable the mouse in all modes
 set foldmethod=marker     " folding
 set backspace=2           " backspaces can delete line breaks
