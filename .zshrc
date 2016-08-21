@@ -61,7 +61,7 @@ setopt numeric_glob_sort # sort filenames containing numbers numerically
 setopt rc_expand_param   # 'foo${xx}bar', where xx is 'a b c', expands to 'fooabar foobbar foocbar'
 
 # Correction
-setopt correctall
+#setopt correctall
 
 # Grep color
 #  This turns on color output for grep.
