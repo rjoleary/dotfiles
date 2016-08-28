@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install packages if they are not already.
-sudo apt-get install git vim zsh
+sudo apt-get install git vim zsh tmux
 
 # Install git prompt for zsh.
 git clone https://github.com/olivierverdier/zsh-git-prompt.git .zsh/git-prompt
