@@ -1,3 +1,8 @@
+# Trap for tmux
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
 # Variables
 export ZSHRC="~/.zshrc"
 export VIMRC="~/.vimrc"
