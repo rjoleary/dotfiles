@@ -4,3 +4,10 @@
 [user]
 	name = Ryan O'Leary
 	email = ryan@ryanoleary.ca
+
+[alias]
+	cb = checkout -b
+	ap = add -p
+	cm = commit -m
+	cpm = commit -pm
+	s = status

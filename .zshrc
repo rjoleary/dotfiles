@@ -77,6 +77,7 @@ alias ls='ls --color=auto --classify' # Color is disabled when piping
 alias clang++='clang++ -std=c++11 -Wall -pedantic'
 alias zshrc="$EDITOR $ZSHRC && source $ZSHRC" # reloads .zshrc after editing
 alias vimrc="$EDITOR $VIMRC"
+alias g='git' # .gitconfig contains additional aliases
 
 # I have some private configurations I like to keep secret. ;)
 if [ -n "$PRIVATE" ]; then
