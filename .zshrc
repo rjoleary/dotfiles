@@ -32,8 +32,9 @@ setopt prompt_subst # variable substitution in the prompt
 PROMPT='%B[%h] \
 %{$fg[red]%}%n@%m \
 %{$fg[blue]%}%.%b\
-%{$reset_color%}$(git_super_status) \
+%{$reset_color%} \
 %B%#%b '
+RPROMPT='$(git_super_status)'
 
 # History
 export HISTSIZE=2000
