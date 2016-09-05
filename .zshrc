@@ -71,7 +71,7 @@ setopt rc_expand_param   # 'foo${xx}bar', where xx is 'a b c', expands to 'fooab
 
 # Grep color
 #  This turns on color output for grep.
-export GREP_OPTIONS="--color=auto"
+alias grep="grep --color=auto"
 
 # Aliases
 alias ls='ls --color=auto --classify' # Color is disabled when piping
