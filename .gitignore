@@ -9,8 +9,10 @@
 !/.gitattributes
 
 # Files which are synced.
-!/.vim/after/
-!/.vim/snippets/
+!/.vim/
+/.vim/*
+!/.vim/after
+!/.vim/snippets
 !/.vimrc
 !/.zsh/
 !/.zshrc
