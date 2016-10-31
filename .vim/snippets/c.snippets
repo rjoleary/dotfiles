@@ -1,0 +1,8 @@
+# inclusion guards
+snippet #cguards
+	#ifndef ${1:`substitute(toupper(expand("%:t")),"\\.","_","g")`}__INCLUDED
+	#define $1__INCLUDED
+
+	${2}
+
+	#endif // $1__INCLUDED

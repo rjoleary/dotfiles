@@ -1,0 +1,14 @@
+# inclusion guards
+snippet #make
+	.PHONY : build test clean
+
+	build : ${1:a.out}
+
+	$1 : ${2:a.c}
+		${3:gcc a.c -o a.out}
+
+	test : $1
+		${4:./a.out}
+
+	clean :
+		rm $1
