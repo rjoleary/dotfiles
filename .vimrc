@@ -77,15 +77,24 @@ command Json %!python -m json.tool
 
 """""""""""""""""""" Vundle Plugin """"""""""""""""""""
 call plug#begin('~/.vim/plugged')
-Plug 'justmao945/vim-clang'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'msanders/snipmate.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'cschlueter/vim-wombat'
+Plug 'justmao945/vim-clang', { 'for': 'cpp' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'Shougo/neocomplete'
 call plug#end()
 
 
 """""""""""""""""""" WOMBAT PLUGIN """"""""""""""""""""
 set t_Co=256
 colorscheme wombat256
+
+
+"""""""""""""""""""" NEOCOMPLETE PLUGIN """"""""""""""""""""
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_select = 1
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
