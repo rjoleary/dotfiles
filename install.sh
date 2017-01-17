@@ -14,5 +14,6 @@ chsh -s /usr/bin/zsh
 mkdir -p ~/.vimtemp
 
 # Install bundles into vim.
-git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/vundle
-vim +BundleInstall +qall
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall

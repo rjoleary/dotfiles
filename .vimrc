@@ -76,44 +76,16 @@ command Json %!python -m json.tool
 
 
 """""""""""""""""""" Vundle Plugin """"""""""""""""""""
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-"Bundle 'Rip-Rip/clang_complete'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'msanders/snipmate.vim'
-Bundle 'derekwyatt/vim-fswitch'
-Bundle 'cschlueter/vim-wombat'
-filetype plugin indent on
-
-
-"""""""""""""""""""" Clang Complete Plugin """"""""""""""""""""
-
-" Use `libclang.so`; it is faster than the running clang, but requires Python.
-"let g:clang_library_path      = '/usr/lib/llvm-3.4/lib/'
-" Compile with C++11.
-"let g:clang_user_options      = '-std=c++11'
-
-" Use a popup completion menu.
-"set completeopt=menu
-" Select the first entry in the popup menu.
-"let g:clang_auto_select       = 1
-" Automatically complete after `->`, `.` and `::`.
-"let g:clang_complete_auto     = 1
-" Show error window when compilation fails.
-"let g:clang_complete_copen    = 0
-" Periodically update the error window.
-"let g:clang_periodic_quickfix = 1
-" Highlight errors in the code as well.
-"let g:clang_hl_errors         = 1
-" Add code placeholders for arguments, parameters, etc.
-"let g:clang_snippets          = 1
-"let g:clang_snippets_engine   = 'clang_complete'
+call plug#begin('~/.vim/plugged')
+Plug 'justmao945/vim-clang'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'msanders/snipmate.vim'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'cschlueter/vim-wombat'
+call plug#end()
 
 
 """""""""""""""""""" WOMBAT PLUGIN """"""""""""""""""""
-syntax on
 set t_Co=256
 colorscheme wombat256
