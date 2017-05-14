@@ -80,6 +80,9 @@ alias zshrc="$EDITOR $ZSHRC && source $ZSHRC" # reloads .zshrc after editing
 alias vimrc="$EDITOR $VIMRC"
 alias g='git' # .gitconfig contains additional aliases
 alias ws='python -m SimpleHTTPServer' # web server
+alias disableautomount='gsettings set org.gnome.desktop.media-handling automount false'
+alias enableautomount='gsettings set org.gnome.desktop.media-handling automount true'
+
 
 # I have some private configurations I like to keep secret. ;)
 if [ -n "$PRIVATE" ]; then
