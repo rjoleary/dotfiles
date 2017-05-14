@@ -11,7 +11,7 @@ export EDITOR="vim"
 # General Options
 setopt auto_cd          # if a command cannot be executed, perform cd command
 setopt pushd_to_home    # pushd without arguments becomes pushd $home
-setopt vi               # use vi keymappings
+#setopt vi               # use vi keymappings
 setopt print_exit_value # print non-zero exit status
 setopt no_beep          # disable beeping
 unsetopt flow_control   # disable ^s from stopping terminal
