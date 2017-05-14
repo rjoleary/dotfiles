@@ -85,6 +85,7 @@ Plug 'cschlueter/vim-wombat'
 Plug 'justmao945/vim-clang', { 'for': 'cpp' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Shougo/neocomplete'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 call plug#end()
 
 
