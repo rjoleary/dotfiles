@@ -72,7 +72,7 @@ set dir=~/.vimtemp//,.
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " automatically change working directory of window to current file
 "autocmd BufEnter * silent! lcd %:p:h
-command Json %!python -m json.tool
+command Json %!python3 -m json.tool
 
 
 """""""""""""""""""" Vundle Plugin """"""""""""""""""""
