@@ -17,8 +17,8 @@ setopt no_beep          # disable beeping
 unsetopt flow_control   # disable ^s from stopping terminal
 
 # Git Prompt
+ZSH_THEME_GIT_PROMPT_CACHE="Y"
 source ~/.zsh/git-prompt/zshrc.sh
-#ZSH_THEME_GIT_PROMPT_NOCACHE="Y"
 
 # Prompt
 autoload -U colors && colors
@@ -77,7 +77,6 @@ alias g='git' # .gitconfig contains additional aliases
 alias ws='python -m SimpleHTTPServer' # web server
 alias disableautomount='gsettings set org.gnome.desktop.media-handling automount false'
 alias enableautomount='gsettings set org.gnome.desktop.media-handling automount true'
-
 
 # I have some private configurations I like to keep secret. ;)
 if [ -n "$PRIVATE" ]; then
