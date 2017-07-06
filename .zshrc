@@ -65,6 +65,13 @@ setopt bad_pattern       # show an error if a glob is badly formed
 setopt numeric_glob_sort # sort filenames containing numbers numerically
 setopt rc_expand_param   # 'foo${xx}bar', where xx is 'a b c', expands to 'fooabar foobbar foocbar'
 
+# Graveyard
+# This was over-eager in finding mistakes (ex: mv hello1.txt hello2.txt):
+#setopt correctall
+# This makes it difficult to access the most recently entries in the history
+# when rapidly switching between terminals:
+#setopt share_history        # history is shared across terminals
+
 # Grep color
 #  This turns on color output for grep.
 alias grep="grep --color=auto"

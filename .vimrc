@@ -36,7 +36,6 @@ set number                 " line numbering
 set cmdheight=2            " larger command window allows for more info
 set showcmd                " eg. HxW for block selection
 set mouse=a                " enable the mouse in all modes
-set clipboard=unnamedplus  " use clipboard for yank
 set hidden                 " instead of closing, buffers become hidden
 set scrolloff=3            " keep 3 lines below and above the cursor
 
@@ -57,9 +56,13 @@ noremap <F5> :setlocal spell! spelllang=en_ca<CR>
 
 """""""""""""""""""" Mappings Graveyard """"""""""""""""""""
 " These were nice but make it difficult to use other people's vims.
-"inoremap jj <Esc>
-"nnoremap ; :
+" These wrecked me whenever running vim without my configs:
+"inoremap jj <Esc>          " Map jj to ESC in insert mode
+"nnoremap ; :               "
 "nnoremap : ;
+" Since deleting text also yanked, this caused the accidently loss of
+" clipboard content too often:
+"set clipboard=unnamedplus  " use clipboard for yank
 
 
 """""""""""""""""""" Swap and Backup Directory """"""""""""""""""""
