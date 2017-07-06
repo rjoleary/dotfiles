@@ -23,6 +23,14 @@ impossible to clone into a non-empty directory, so the above work-around is
 used.
 
 
+## TODO
+
+- Better caching for git-prompt-cache or use the haskell version
+- Automatic paste mode plugin for vim
+- Tune the settings for c/c++ autocomplete
+- "z=" autocorrect when spell check is not enabled
+
+
 ## License
 
 The license is found in the `LICENSE.txt` file. The license only applies
