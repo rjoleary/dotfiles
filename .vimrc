@@ -99,7 +99,11 @@ colorscheme wombat256
 
 
 """""""""""""""""""" NEOCOMPLETE PLUGIN """"""""""""""""""""
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_auto_select = 1
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
+
+
+" https://superuser.com/questions/299419/prevent-vim-from-clearing-the-clipboard-on-exit
+autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
