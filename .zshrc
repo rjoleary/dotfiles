@@ -103,6 +103,11 @@ alias ws='python -m SimpleHTTPServer' # web server
 alias disableautomount='gsettings set org.gnome.desktop.media-handling automount false'
 alias enableautomount='gsettings set org.gnome.desktop.media-handling automount true'
 
+# Sudo, but keep path env variable
+function sudop() {
+    sudo "PATH=$PATH" sh -c "$*"
+}
+
 # I have some private configurations I like to keep secret. ;)
 if [ -n "$PRIVATE" ]; then
     if [ -e "$PRIVATE" ]; then
