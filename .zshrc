@@ -12,29 +12,47 @@ export EDITOR="vim"
 setopt auto_cd          # if a command cannot be executed, perform cd command
 setopt pushd_to_home    # pushd without arguments becomes pushd $home
 #setopt vi               # use vi keymappings
-setopt print_exit_value # print non-zero exit status
 setopt no_beep          # disable beeping
 unsetopt flow_control   # disable ^s from stopping terminal
 
-# Git Prompt
-ZSH_THEME_GIT_PROMPT_CACHE="Y"
-source ~/.zsh/git-prompt/zshrc.sh
+# Git Prompt - now done asynchronously
+#ZSH_THEME_GIT_PROMPT_CACHE="Y"
+#source ~/.zsh/git-prompt/zshrc.sh
 
 # Prompt
 autoload -U colors && colors
 setopt prompt_subst # variable substitution in the prompt
 # %B - begin bold
 # %b - end bold
-# %h - event number
 # %n - username
 # %m - machine name
 # %# - prompt symbol (becomes % for non-privileged user)
-PROMPT='%B[%h] \
+PROMPT='%B%(0?..[%?] )\
 %{$fg[red]%}%n@%m \
 %{$fg[blue]%}%.%b\
 %{$reset_color%} \
 %B%#%b '
-RPROMPT='$(git_super_status)'
+RPROMPT_PREV=''
+RPROMPT=''
+
+mkdir -p "$TMPPREFIX"
+function precmd {
+    function build_rprompt {
+		source ~/.zsh/git-prompt/zshrc.sh
+        sleep 1
+        echo -n "$(git_super_status)" > "$TMPPREFIX/rprompt.$$"
+        kill -s USR2 $$
+    }
+    RPROMPT="*$RPROMPT_PREV"
+    build_rprompt &!
+}
+
+function TRAPUSR2 {
+    RPROMPT=$(cat "$TMPPREFIX/rprompt.$$")
+    RPROMPT_PREV="$RPROMPT"
+    zle && zle reset-prompt
+}
+
 
 # History
 export HISTSIZE=2000
