@@ -18,3 +18,4 @@
 !/.zshrc
 !/.gitconfig
 !/.tmux.conf
+!/check_repos.sh
