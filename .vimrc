@@ -90,8 +90,14 @@ Plug 'justmao945/vim-clang', { 'for': 'cpp' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Shougo/neocomplete'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 """""""""""""""""""" WOMBAT PLUGIN """"""""""""""""""""
 set t_Co=256
