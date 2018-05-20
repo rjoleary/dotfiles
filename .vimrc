@@ -112,4 +112,4 @@ inoremap <expr><C-l> neocomplete#complete_common_string()
 
 
 " https://superuser.com/questions/299419/prevent-vim-from-clearing-the-clipboard-on-exit
-autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
+"autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
