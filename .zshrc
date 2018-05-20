@@ -116,3 +116,6 @@ if [ -n "$PRIVATE" ]; then
         echo 'Error: could not source private configurations'
     fi
 fi
+
+export GOROOT=$HOME/repos/go
+export PATH=$PATH:$GOROOT/bin:$HOME/go/bin
