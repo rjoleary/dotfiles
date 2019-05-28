@@ -117,5 +117,19 @@ if [ -n "$PRIVATE" ]; then
     fi
 fi
 
-export GOROOT=$HOME/repos/go
-export PATH=$PATH:$GOROOT/bin:$HOME/go/bin
+# Go
+# I put all my go installations in $HOME/go/root. List them with golist. Switch
+# to a different installation with gouse.
+golist() {
+    dir "$HOME/go/root"
+}
+gouse() {
+    export GOROOT=$HOME/go/root/$1
+    export PATH=$GOROOT/bin:$PATH
+    go version
+}
+export PATH=$PATH:$HOME/go/bin
+gouse go1.12.5
+# Go projects I often contribute to.
+UROOT=$HOME/go/src/github.com/u-root/u-root
+FIANO=$HOME/go/src/github.com/linuxboot/fiano
