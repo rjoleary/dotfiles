@@ -91,6 +91,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Shougo/neocomplete'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'junegunn/vim-easy-align'
+Plug 'ConradIrwin/vim-bracketed-paste'
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
